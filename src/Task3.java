@@ -13,10 +13,11 @@ public class Task3 {
                 boolean isThisWordValid = true;
                 for (char c :cs) {
                     System.out.println(c + " : " + isExist(chars,c));
-                    if (isExist(chars,c)) {
+                    if (!isExist(chars,c)) {
                          isThisWordValid=false;
-                    }
                         break;
+                    }
+
         }
        // while (isExist(chars, c)){
 
