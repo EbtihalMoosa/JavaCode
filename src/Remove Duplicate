@@ -1,0 +1,16 @@
+         if (array.lenath==0) {
+                System.out.println("New Length: 0");
+                return;
+            }
+            int uniqueIndex = 0;
+            for (int x = 1; x < array. Length; X++) {
+                if (array[x] != array [uniqueIndex]) {
+                    uniqueIndexe x ++;
+                    array[uniqueIndex] = array[x];
+                    int newLength = uniqueIndex;
+                    System.out.println("New Length: " + newLength);
+                    System.out.print("New Array: ");
+                    for (int y = 0; y < newLength; y++) {
+                        System.out.print(array[y] + " ");
+                    }
+                }}}}
