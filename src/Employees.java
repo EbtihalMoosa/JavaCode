@@ -1,5 +1,5 @@
 public class Employees {
-    int salary;
+    double salary;
     String name;
     int phoneNumber;
     int Id;

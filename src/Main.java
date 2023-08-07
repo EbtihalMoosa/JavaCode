@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -5,133 +6,164 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+        Employees e1 = new Employees();
+        e1.Id = 8883;
+        e1.name = "ahmed";
+        e1.phoneNumber = 29838;
+        e1.salary = 200;
+        Employees e2 = new Employees();
+        e2.Id = 93927;
+        e2.phoneNumber = 738732;
+        e2.name = "sara";
+        e2.salary = 350;
+        Employees e3 = new Employees();
+        e3.Id = 283;
+        e3.phoneNumber = 9876;
+        e3.name = "Noor";
+        e3.salary = 600;
 
-        Customer cus1 = new Customer(" Maryam", "Maryam@gmail.com", "Mar633", "56677888", "Ibri");
-        Customer cus2 = new Customer(" Reem", "Reem@gmail.com", "Reem633", "23434535", "Muscat");
-        Customer cus3 = new Customer(" Fatma", "Fatma@gmail.com", "Fat777", "76543998", "Sohar");
-
-        // String sel1pro []= {" t-shirt", "makeup", " bags", " shose"};   ,sel1pro
-        Seller sel1 = new Seller("Ebtihal", "Ebtihal@gmail.com", "Ebt@5656", "4556677878");
-
-        // String sel2pro []= {" t-shirt", "makeup", " bags", " shose"};  ,sel2pro
-        Seller sel2 = new Seller("Athari", "Athari@gmail.com", "Ath@5656", "33474889");
+        List<Employees> e = new ArrayList<>();
+        e.add(e1);
+        e.add(e2);
+        e.add(e3);
 
         while (true) {
-            System.out.println(" if you are admin enter 1 , if you are customer enter 2 , if you are seller enter 3");
+            System.out.println(" Enter 1= create a new employee, 2 = show all employee salaries, 3 = exit ");
+            int choice = read.nextInt();
+            if (choice == 1) {
+                Employees en = new Employees();
+                System.out.print("enter your name: ");
+                String name = read.next();
+                System.out.print("enter your phone number: ");
+                int phn = read.nextInt();
+                System.out.print("enter your id: ");
+                int id = read.nextInt();
+                System.out.print("enter your Salary: ");
+                double sal = read.nextDouble();
+en.name= name;
+en.phoneNumber=phn;
+en.Id =id;
+en.salary = sal;
 
-            int x = scanner.nextInt();
-            if (x == 1) {
-                System.out.println("Welcome to Admin page");
-                System.out.println(" to add customer enter 1 , to add seller enter 2");
-                int y = scanner.nextInt();
-                        if (y == 1) {
+                e.add(en);
+//                System.out.println(e.get(en.name)+"\t");
+//                System.out.println(e.get(en.Id) + "\t");
 
-                            System.out.println("Enter customer name : ");
-                            String cusName = scanner.next();
-
-                            System.out.println("Enter customer email : ");
-                            String cuse = scanner.next();
-
-                            System.out.println("Enter customer password : ");
-                            String cusPass = scanner.next();
-
-
-                            System.out.println("Enter customer address : ");
-                            String addr = scanner.next();
-
-                            System.out.println("Enter customer phone number : ");
-                            String phn = scanner.next();
-
-
-                            Customer newCustomer = new Customer(cusName, cuse, cusPass, addr, phn);
-                            List<Customer> customers = new ArrayList<>();
-                            customers.add(cus1);
-                            customers.add(cus2);
-                            customers.add(cus3);
-                            customers.add(newCustomer);
-                            System.out.print(newCustomer);
-
-                            System.out.println();
-                            String [] arrc ={  "customer name ", "  Email "," Address"};
-                            for (int i = 0; i<3; i++){
-                                System.out.print(arrc[i] + "\t");
-                            }
-                            System.out.println();
-                            for (Customer customer : customers) {
-
-                                System.out.println(customer.cusName + " \t\t"+ customer.cusEmail + " \t\t"+ customer.address );
-                            }
-
-                        } else if (y == 2) {
-                            System.out.println("Enter seller name : ");
-                            String sName = scanner.next();
-
-                            System.out.println("Enter seller email : ");
-                            String sele = scanner.next();
-
-                            System.out.println("Enter seller password : ");
-                            String selPass = scanner.next();
-
-
-                            System.out.println("Enter seller phone : ");
-                            String selph = scanner.next();
-
-                            Seller newSeller = new Seller(sName, sele, selPass, selph);
-                            List<Seller> sellers = new ArrayList<>();
-                            sellers.add(sel1);
-                            sellers.add(sel2);
-                            sellers.add(newSeller);
-
-                           // show list seller
-
-                            String [] arrse ={  "seller name ", "  Email "," phone"};
-                            for (int i = 0; i<3; i++){
-                                System.out.print(arrse[i] + "\t");
-                            }
-                            System.out.println();
-                            for (Seller seller : sellers) {
-
-                                System.out.println(seller.sellName + " \t\t"+ seller.sellEmail + " \t\t"+ seller.sellPhone );
-                            }
-
-                        }
-
-            }else if (x == 2) {
-                System.out.println("Welcome to customer page");
-
-                System.out.println("Enter your name : ");
-                String name = scanner.next();
-
-                System.out.println("Enter your password : ");
-                String pass = scanner.next();
-
-
-//                if (){
-//
-//                }
-                //show
-                Cart cart = new Cart();
-
-                cart.showProduct();
-
-                cart.addToCart();
-
-                cart.showProduct();
-
-            } else if (x == 3) {
-                System.out.println("Welcome to seller page");
-                Cart cart = new Cart();
-                cart.addToCart();
-
-            } else {
-
-                System.out.println("you will exist , thank you !");
-                break;
             }
+          else if (choice ==2) {
+                    for (int i = 0; i < e.size(); i++) {
+//                        for (int i = 0; i < 3; i++) {
 
+                            System.out.println(" ");
+                        System.out.println("Name: " + e.get(i).name +"\t");
+                        System.out.println("ID: " + e.get(i).Id + "\t");
+                        System.out.println("Phone number: " + e.get(i).phoneNumber + "\t");
+                        System.out.println("Salary: " + e.get(i).salary + "\t");
 
+                    }
+                } else {
+
+                    System.out.println("you will exist , thank you !");
+                    break;
+                    }
+}
         }
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        Student student2 = new Student();
+//        student2.sId= 2;
+//        student2.sName= "Ebtihal";
+//        student2.phone = "888733";
+//        Student student3 = new Student();
+//        student3.sId= 3;
+//        student3.sName= "Safa";
+//        student3.phone = "22388";
+//        Student student4 = new Student();
+//        student4.sId= 4;
+//        student4.sName= "Shahad";
+//        student4.phone = "00036635";
+//        Student student5 = new Student();
+//        student5.sId= 5;
+//        student5.sName= "Huda";
+//        student5.phone = "00036635";
+
+
+        //user input
+
+//        List<Student> students = new ArrayList<>();
+//        students.add(student1);
+//        students.add(student2);
+//        students.add(student3);
+//        students.add(student4);
+//        students.add(student5);
+//
+//
+////
+//        while (true) {
+//            System.out.println(" Enter 1= attendance register, 2 = show attendance list, 3 = exit ");
+//            int x = read.nextInt();
+//            if (x == 1) {
+//                System.out.println("Enter your name : ");
+//                String name = read.next();
+//                if (
+//                                   student1.sName.equals(name)
+//                                || student2.sName.equals(name)
+//                                || student3.sName.equals(name)
+//                                || student4.sName.equals(name)
+//                                || student5.sName.equals(name)
+//                )
+//                {
+//                    System.out.println(" you are already registered !");
+//                }
+//                else {
+//                    System.out.println("Pleas enter your details for attendance: ");
+//                    System.out.println("Enter your ID : ");
+//                    Student student = new Student();
+//                    student.sId = read.nextInt();
+//                    System.out.println("Enter your name : ");
+//                    student.sName = read.next();
+//                    System.out.println("Enter your phone number : ");
+//                    student.phone = read.next();
+//                    students.add(student);
+//
+//                    for (int i = 0; i < students.size(); i++) {
+//                        System.out.print(students.get(i).sId + "\t");
+//                        System.out.print(students.get(i).sName + "\t");
+//                        System.out.println(students.get(i).phone + "\t");
+//                    }
+//
+//                }
+//
+//
+//            } else if (x == 2) {
+//                for (int i = 0; i < students.size(); i++) {
+//                    System.out.print(students.get(i).sId + "\t");
+//                    System.out.print(students.get(i).sName + "\t");
+//                    System.out.println(students.get(i).phone + "\t");
+//                }
+//            } else {
+//
+//                System.out.println("you will exist , thank you !");
+//                break;
+//            }
+//        }
+//    }
