@@ -1,0 +1,21 @@
+//Task2
+                        {
+//                                Scanner read = new Scanner(System.in);
+                                int number = 1 + (int) (100 * Math.random());
+                                int x = 10;
+                                int i;
+
+                                for (i = 0; i < x; i++) {
+                                        System.out.println("Guess a number between 1 to 100: ");
+                                        int guess = read.nextInt();
+
+                                        if (number == guess) {
+                                                System.out.println("Right Answer");
+                                                break;
+                                        } else if (number > guess) {
+                                                System.out.println("Wrong, Larger");
+                                        } else if (number < guess) {
+                                                System.out.println("Wrong, Less ");
+                                        }
+                                }
+                        }
