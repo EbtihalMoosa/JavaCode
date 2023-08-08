@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Task3 {
+        public static void main(String[] args) {
+//Task 1
+                double a = 1;
+
+                Scanner read = new Scanner(System.in);
+                System.out.print("enter number: ");
+                double n = read.nextDouble();
+
+                System.out.print("enter power: ");
+                double p = read.nextDouble();
+// اذا البور لايساوي الصفر
+                while (p != 0) {
+                        a = n * a;
+                        --p;
+                        System.out.println("=" + a);
+
+}}}
